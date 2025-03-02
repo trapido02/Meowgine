@@ -6,7 +6,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 add_subdirectory(vendor/glfw)
 
-add_executable(Meowgine source/main.cpp)
+file(GLOB_RECURSE SRC_FILES source/*.cpp)
+add_executable(Meowgine ${SRC_FILES})
 
 target_include_directories(Meowgine PRIVATE vendor/glfw/include)
 
